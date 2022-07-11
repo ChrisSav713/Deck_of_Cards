@@ -28,7 +28,7 @@ class Deck:
     def show_cards(self):
         for card in self.cards:
             card.card_info()
-
+    
     def empty_deck(self):
         self.cards.clear()
 
