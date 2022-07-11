@@ -11,8 +11,10 @@ class Deck:
         for s in suits:
             for i in range(1,14):
                 str_val = ""
+                point_val = i
                 if i == 1:
                     str_val = "Ace"
+                    point_val = 13
                 elif i == 11:
                     str_val = "Jack"
                 elif i == 12:
@@ -21,7 +23,7 @@ class Deck:
                     str_val = "King"
                 else:
                     str_val = str(i)
-                self.cards.append( card.Card( s , i , str_val ) )
+                self.cards.append( card.Card( s , point_val , str_val ) )
 
     def show_cards(self):
         for card in self.cards:
@@ -46,4 +48,4 @@ class Deck:
             random_number = random.randrange(0,len(self.cards))
             new_deck.cards.append(self.cards[random_number])
             self.cards.pop(random_number)
-        return new_deck
+        return new_deck.cards
