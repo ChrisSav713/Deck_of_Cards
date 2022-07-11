@@ -39,4 +39,11 @@ class Deck:
             self.cards.pop(random_number)
         self.cards = new_deck.cards
 
-
+    def split_deck(self):
+        new_deck = Deck()
+        new_deck.empty_deck()
+        while len(self.cards) > 26:
+            random_number = random.randrange(0,len(self.cards))
+            new_deck.cards.append(self.cards[random_number])
+            self.cards.pop(random_number)
+        return new_deck

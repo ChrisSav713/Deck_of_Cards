@@ -1,10 +1,18 @@
 from classes.deck import Deck
+import os
 
-bicycle = Deck()
-
-bicycle.show_cards()
 
 print("********************************************")
-bicycle.randomize()
 
-bicycle.show_cards()
+player = Deck()
+computer = Deck()
+
+player.randomize()
+computer = player.split_deck()
+
+print("********Player*******************")
+print(len(player.cards))
+player.show_cards()
+print("*******Computer******************************")
+print(len(computer.cards))
+computer.show_cards()
